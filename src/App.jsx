@@ -1,6 +1,11 @@
+import cls from './App.module.css'
+import Navbar from './components/Navbar'
+
 const App = () => {
     return (
-        <h1>Hello World</h1>
+        <section className={cls.root}>
+            <Navbar/>
+        </section>
     )
 }
 
