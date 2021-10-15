@@ -6,6 +6,10 @@
     cursor: pointer;
 }
 
+.logo h2{
+    margin: 0px;
+}
+
 .logo h2:hover{
     opacity: .7;
 }
