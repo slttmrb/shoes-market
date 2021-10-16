@@ -4,22 +4,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 0;
 }
 
-.navbar button{
-    outline: none;
-    color: rgb(0, 0, 0);
-    border: none;
-    background-color: transparent;
-    height: 100%;
-    width: 5%;
-    padding: 2%;
+.Navbar_1{
+    width: 15%;
+    text-align: center;
+}
+
+.Navbar_1 button{
+    margin: 0 10px;
+    background: none;
     cursor: pointer;
-
-    display: flex;
-    justify-content: stretch;
+    outline: none;
+    border: none;
+    border-left: 1px solid grey;
+    padding-left: 25px;
 }
 
-.navbar button:hover{
-    opacity: .8;
+.Navbar_1 button svg{
+    font-size: 30px;
+    color: rgb(46, 44, 44);
+}
+
+.Navbar_1 button:hover svg{
+    color: rgb(185, 185, 185);
 }

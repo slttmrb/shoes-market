@@ -1,0 +1,12 @@
+.shoes{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.shoes title h2{
+    font-size: 30px;
+    color: rgb(114, 105, 105);
+    font-weight: 500;
+    margin: 0px;
+}

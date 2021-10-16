@@ -11,12 +11,12 @@ const Navbar = () => {
             <section className={cls.navbar}>
                 <Logo/>
                 <Search/>
-                <button className='Person'><BsPerson/></button>
-                <button className='Cart'><BsCart3/></button>
+                <div className={cls.Navbar_1}>
+                    <button><BsPerson/></button>
+                    <button><BsCart3/></button>
+                </div>
             </section>
-            <section>
-                <Menu/>
-            </section>
+             <Menu/>
         </div>
     )
 }
