@@ -1,0 +1,12 @@
+.menu button{
+    outline: none;
+    border: none;
+    color: white;
+    background-color: rgb(51, 112, 243);
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
