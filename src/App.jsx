@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import { Route, Switch } from 'react-router'
 import Shoes from './components/Shoes'
 import Footer from './components/Footer/indes'
+import SinglePage from './pages/SinglePage'
 
 const App = () => {
     return (
@@ -10,6 +11,7 @@ const App = () => {
             <Navbar/>
             <Switch>
                 <Route exact path='/' component={Shoes} />
+                <Route exact path='/single/:id' component={SinglePage}/>
             </Switch>
             <Footer/>
         </section>

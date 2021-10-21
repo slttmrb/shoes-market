@@ -63,3 +63,11 @@
 .shoes_child_footer button:hover{
     opacity: .8;
 }
+
+.cls.shoes_btn{
+    margin-bottom: 20px;
+}
+
+.cls.shoes_btn a{
+    color: rgb(51, 112, 243);
+}

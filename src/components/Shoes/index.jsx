@@ -1,6 +1,6 @@
 import cls from './Shoes.module.css'
 import { useState } from 'react'
-
+import { Link } from 'react-router-dom'
 
 const Shoes = () => {
     const [data, setData] = useState([])
@@ -31,8 +31,8 @@ const Shoes = () => {
             </div>
             <div className={cls.shoes_wrapper}>
                 {
-                    data.map(({ title, size, price, color, img }, index) => {
-                        return <div key={index}>
+                    data.map(({ title, size, price, color, img, id }) => {
+                        return <div key={id}>
                             <div className={cls.shoes_child_title}>
                                 <img src={img} alt="abc"/>
                                 <h4>{title}</h4>
@@ -41,6 +41,9 @@ const Shoes = () => {
                                 <h3>Size: <span>{size}</span></h3>
                                 <h3>Price: <span>{price}</span></h3>
                                 <h3>Color: <span>{color}</span></h3>
+                            </div>
+                            <div className={cls.shoes_btn}>
+                                <Link to={`/single/${id}`} key={id}>Подробнее</Link>
                             </div>
                             <div className={cls.shoes_child_footer}>
                                 <button>

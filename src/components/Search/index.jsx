@@ -5,10 +5,9 @@ import { useEffect, useState } from 'react'
 const Search = () => {
     const [data, setData] = useState([])
     const [value, setValue] = useState('')
-    const [check, setCheck] = useState(false)
+    const [appear, setAppear] = useState(false)
 
-
-    useEffect(() => {
+    const handleSearch = () => {
         fetch('https://market-8c79b-default-rtdb.asia-southeast1.firebasedatabase.app/shoes.json' , {
             method: 'GET'
         })
@@ -23,16 +22,22 @@ const Search = () => {
                     id
                 }
             })
+
+            if(value !== ''){
+                const filteredArray = data.filter(item => item.title.toUpperCase().includes(value.toUpperCase()))
+                setData(filteredArray)
+                setAppear(true)
+            } else {
                 setData(data)
-                
-            })
-        }, [data])
+            }
+        })
+    }
 
-    }, [check])
-
-
-
-
+    useEffect(() => {
+        if(value !== ''){
+            setAppear(false)
+        }
+    }, [value])
 
     return (
     <section className={cls.search}>
@@ -42,11 +47,16 @@ const Search = () => {
             value={value}
             onChange={e => setValue(e.target.value)}      
         />
-        <button>
+        <button onClick={handleSearch}>
             <AiOutlineSearch/>
             Найти 
         </button>
-        <div className={cls.search_wrapper}>
+        <div 
+            className={cls.search_wrapper}
+            style={{
+                display: appear ? 'block' : 'none'
+            }}
+        >
            {
                data.map(({title, id, img}) => {
                    return  <div key={id} className={cls.search_wrapper_child}>

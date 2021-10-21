@@ -53,6 +53,7 @@
     box-shadow: 0px 0px 0px 3px rgb(184, 183, 183);
     width: 100%;
     border-radius: 5px;
+    display: none;
     height: 200px;
     bottom: -205px;
     overflow-y: scroll;
@@ -63,7 +64,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50%;
+    height: 100%;
 }
 
 .search_wrapper_child img{
