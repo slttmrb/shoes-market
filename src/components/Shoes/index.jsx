@@ -1,40 +1,28 @@
 import cls from './Shoes.module.css'
 import { useState } from 'react'
 
-const base = [
-    {
-        title: 'Puma shoes',
-        price: 150,
-        size: 40,
-        color: 'blue',
-        img: 'https://cache.mrporter.com/variants/images/3983529959609399/e1/w960_q80.jpg',
-    },
-    {
-        title: 'Adida shoes',
-        price: 500,
-        size: 40,
-        color: 'black',
-        img: 'https://cache.mrporter.com/variants/images/3983529959609399/e1/w960_q80.jpg',
-    },
-    {
-        title: 'Reebok shoes',
-        price: 200,
-        size: 39,
-        color: 'white',
-        img: 'https://cache.mrporter.com/variants/images/3983529959609399/e1/w960_q80.jpg',
-    },
-    {
-        title: 'NewBalance shoes',
-        price: 300,
-        size: 43,
-        color: 'black',
-        img: 'https://cache.mrporter.com/variants/images/3983529959609399/e1/w960_q80.jpg',
-    }
-]
-
 
 const Shoes = () => {
-    const [data, setData] = useState(base)
+    const [data, setData] = useState([])
+
+    fetch('https://market-8c79b-default-rtdb.asia-southeast1.firebasedatabase.app/shoes.json' , {
+        method: 'GET'
+    })
+    .then(res => res.json())
+    .then(r => {
+        const data = Object.entries(r).map(item => {
+            const id = item[0]
+
+            return {
+                ...item[1],
+                id
+            }
+        })
+
+        setData(data)
+    })
+
+
 
     return (
         <section className={cls.shoes}>
