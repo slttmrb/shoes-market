@@ -5,6 +5,7 @@ import Shoes from './components/Shoes'
 import Footer from './components/Footer/indes'
 import SinglePage from './pages/SinglePage'
 
+
 const App = () => {
     return (
         <section className={cls.root}>

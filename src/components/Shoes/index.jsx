@@ -1,14 +1,18 @@
 import cls from './Shoes.module.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Loader from '../../components/UI/Loader'
+
 
 const Shoes = () => {
     const [data, setData] = useState([])
+    const [ loading, setLoading ] = useState(false)
 
-    fetch('https://market-8c79b-default-rtdb.asia-southeast1.firebasedatabase.app/shoes.json' , {
+    useEffect(() => {
+        fetch('https://market-8c79b-default-rtdb.asia-southeast1.firebasedatabase.app/shoes.json' , {
         method: 'GET'
     })
-    .then(res => res.json())
+    .then(res => res.json() , setLoading(true))
     .then(r => {
         const data = Object.entries(r).map(item => {
             const id = item[0]
@@ -18,11 +22,11 @@ const Shoes = () => {
                 id
             }
         })
-
+        
+        setLoading(false)
         setData(data)
     })
-
-
+    }, [])
 
     return (
         <section className={cls.shoes}>
@@ -31,6 +35,9 @@ const Shoes = () => {
             </div>
             <div className={cls.shoes_wrapper}>
                 {
+                    loading ? <Loader/> : 
+                    <>
+                         {
                     data.map(({ title, size, price, color, img, id }) => {
                         return <div key={id}>
                             <div className={cls.shoes_child_title}>
@@ -52,7 +59,10 @@ const Shoes = () => {
                             </div>
                         </div>
                     })
+                     } 
+                    </>
                 }
+                
             </div>
         </section>
     )

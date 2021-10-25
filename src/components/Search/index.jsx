@@ -1,6 +1,7 @@
 import cls from './Search.module.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Search = () => {
     const [data, setData] = useState([])
@@ -62,7 +63,7 @@ const Search = () => {
                    return  <div key={id} className={cls.search_wrapper_child}>
                    <img src={img} alt="inner" />
                    <div className={cls.search_wrapper_child_body}>
-                       Title: <span>{title}</span>
+                       Title: <Link to={`/single/${id}`}>{title}</Link>
                    </div>
                </div>
                })

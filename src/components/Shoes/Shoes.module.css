@@ -64,10 +64,14 @@
     opacity: .8;
 }
 
-.cls.shoes_btn{
+.shoes_btn{
     margin-bottom: 20px;
+    text-align: center;
+
 }
 
-.cls.shoes_btn a{
+.shoes_btn a{
     color: rgb(51, 112, 243);
+    font-weight: 600;
+    text-decoration: none;
 }
