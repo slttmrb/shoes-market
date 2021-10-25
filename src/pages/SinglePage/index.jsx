@@ -27,8 +27,15 @@ const SinglePage = () => {
             <div>
                 <Link exact to='/'>Назад на главную</Link>
             </div>
-            <h1>Single Page</h1>
-            <img src={img} alt="inner" />
+                <h1>{title}</h1>
+            <div className={cls.img_div}>
+                <img src={img} alt="inner" />
+                <div className={cls.description}>
+                    <div>Размер: {size}</div>
+                    <div>Цвет: {color}</div>
+                    <div>Цена: {price}</div>
+            </div>
+            </div>
         </section>
     )
 }

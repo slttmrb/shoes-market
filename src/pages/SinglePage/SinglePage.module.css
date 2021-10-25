@@ -1,0 +1,17 @@
+.img_div img{
+    height: 100%;
+    width: 500px;
+}
+
+.description{
+    justify-content: flex-end;
+    color: blue;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+
+
+
+
+
